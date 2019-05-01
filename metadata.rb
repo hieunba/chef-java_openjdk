@@ -1,11 +1,13 @@
-name 'chef-java_openjdk'
+name 'java_openjdk'
 maintainer 'Nghiem Ba Hieu'
 maintainer_email 'hi3unb@gmail.com'
 license 'Apache-2.0'
-description 'Installs/Configures chef-java_openjdk'
-long_description 'Installs/Configures chef-java_openjdk'
+description 'Installs/Configures java_openjdk'
+long_description 'Installs/Configures java_openjdk'
 version '0.1.0'
 chef_version '>= 13.0'
+
+supports 'windows'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when

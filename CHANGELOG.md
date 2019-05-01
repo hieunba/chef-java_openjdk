@@ -1,4 +1,4 @@
-# chef-java_openjdk CHANGELOG
+# java_openjdk CHANGELOG
 
 This file is used to list changes made in each version of the chef-java_openjdk cookbook.
 
@@ -6,6 +6,4 @@ This file is used to list changes made in each version of the chef-java_openjdk 
 
 Initial release.
 
-- change 0
-- change 1
-
+- Install jdk 11.0.2 from jdk.java.net
