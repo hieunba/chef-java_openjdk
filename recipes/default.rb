@@ -1,5 +1,5 @@
 #
-# Cookbook:: chef-java_openjdk
+# Cookbook:: java_openjdk
 # Recipe:: default
 #
 # Copyright:: 2019, Nghiem Ba Hieu
@@ -15,3 +15,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+if node['java_openjdk']['skip']
+  Chef::Log.warn('Skipping install of Java OpenJDK!')
+else
+  case node['platform_family']
+  when 'windows'
+    include_recipe 'java_openjdk::windows'
+  end
+end

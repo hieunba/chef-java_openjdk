@@ -1,4 +1,5 @@
 # chef-java_openjdk
 
-TODO: Enter the cookbook description here.
+This cookbook installs [OpenJDK](https://openjdk.java.net/)
 
+Installation guide can be found on [OpenJDK Installing](https://openjdk.java.net/install/)
