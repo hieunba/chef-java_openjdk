@@ -4,7 +4,7 @@ maintainer_email 'hi3unb@gmail.com'
 license 'Apache-2.0'
 description 'Installs/Configures java_openjdk'
 long_description 'Installs/Configures java_openjdk'
-version '0.1.0'
+version '0.1.1'
 chef_version '>= 13.0'
 
 supports 'windows'
