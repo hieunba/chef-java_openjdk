@@ -30,7 +30,7 @@ end
 powershell_script 'unpack openjdk' do
   code <<-DEPLOY
 
-    if (Test-Path "#{node['java']['java_home']}/bin/java.exe")
+    if (Test-Path "#{node['java_openjdk']['java_home']}/bin/java.exe")
     {
         Write-Host "Existing extraction found.. exit!"
         Exit 0
@@ -42,7 +42,7 @@ powershell_script 'unpack openjdk' do
     {
          try
          {
-             Expand-Archive #{openjdk_cache_file_path} #{node['java']['java_home']}
+             Expand-Archive #{openjdk_cache_file_path} #{node['java_openjdk']['java_home']}
 
              $unpacked = $true
 
@@ -73,7 +73,7 @@ powershell_script 'unpack openjdk' do
         {
             # Try to unpack the package
             [System.IO.Compression.ZipFile]::ExtractToDirectory("#{openjdk_cache_file_path}", "#{java_path}")
-            Write-Host ("Successfully extract files to {0}" -f "#{node['java']['java_home']}")
+            Write-Host ("Successfully extract files to {0}" -f "#{node['java_openjdk']['java_home']}")
         }
         catch
         {
@@ -84,8 +84,8 @@ powershell_script 'unpack openjdk' do
   DEPLOY
 end
 
-if node['java']['java_home'] && !node['java']['java_home'].nil?
-  java_home_win = node['java']['java_home']
+if node['java_openjdk']['java_home'] && !node['java_openjdk']['java_home'].nil?
+  java_home_win = node['java_openjdk']['java_home']
   env 'JAVA_HOME' do
     value java_home_win
   end
